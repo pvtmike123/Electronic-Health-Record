@@ -22,6 +22,8 @@ gem 'bootstrap-sass', '~> 3.3.7'
 
 gem 'jquery-rails'
 
+gem 'devise'
+
 
 
 # Use CoffeeScript for .coffee assets and views
