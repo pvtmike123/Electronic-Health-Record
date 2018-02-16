@@ -56,7 +56,7 @@ class PatientsController < ApplicationController
   def destroy
     @patient.destroy
     respond_to do |format|
-      format.html { redirect_to patients_url, notice: 'Patient was successfully destroyed.' }
+      format.html { redirect_to patients_url, notice: 'Patient was successfully destroyed.', class: "destroy" }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class PatientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:forename, :surname)
+      params.require(:patient).permit(:forename, :surname, :age, :postcode)
     end
 end

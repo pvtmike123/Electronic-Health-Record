@@ -21,6 +21,16 @@
     <%= form.text_field :surname, id: :patient_surname %>
   </div>
 
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.text_field :age, id: :patient_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postcode %>
+    <%= form.text_field :postcode, id: :patient_postcode %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
