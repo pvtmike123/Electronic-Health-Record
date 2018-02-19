@@ -5,7 +5,7 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
+    @patients = Patient.all.order("created_at DESC").limit(10)
   end
 
   # GET /patients/1
