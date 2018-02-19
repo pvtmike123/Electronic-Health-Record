@@ -1,37 +1,90 @@
 <%= form_with(model: patient, local: true) do |form| %>
-  <% if patient.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+<% if patient.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(patient.errors.count, "error") %>
+      prohibited this patient from being saved:</h2>
 
-      <ul>
+    <ul>
       <% patient.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
+    </ul>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="col-md-6">
+
+    <div class="field">
+      <%= form.label :Title %>
+      <%= form.select :title, [["", ""], ["Mr", "Mr"], ["Mrs", "Mrs"], ["Miss", "Miss"], ["Madame", "Madame"], ["Master", "Master"]], {}, {class: "form-control"} %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :forename %>
-    <%= form.text_field :forename, id: :patient_forename %>
-  </div>
+    <div class="field">
+      <%= form.label :forename %>
+      <%= form.text_field :forename, id: :patient_forename, :class => "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :surname %>
-    <%= form.text_field :surname, id: :patient_surname %>
-  </div>
+    <div class="field">
+      <%= form.label :surname %>
+      <%= form.text_field :surname, id: :patient_surname, :class => "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.text_field :age, id: :patient_age %>
-  </div>
+    <div class="field">
+      <%= form.label :age %>
+      <%= form.text_field :age, id: :patient_age, :class => "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :postcode %>
-    <%= form.text_field :postcode, id: :patient_postcode %>
-  </div>
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email, id: :patient_email, :class => "form-control" %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="field">
+      <%= form.label :sex %>
+      <%= form.select :sex, [["", ""], ["Male", "Male"], ["Female", "Female"]], {}, {class: "form-control"} %>
+    </div>
+
   </div>
+  <div class="col-md-6">
+
+
+    <div class="field">
+      <%= form.label :address %>
+      <%= form.text_field :address, id: :patient_address, :class => "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :postcode %>
+      <%= form.text_field :postcode, id: :patient_postcode, :class => "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :county %>
+      <%= form.text_field :county, id: :patient_county, :class => "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :town %>
+      <%= form.text_field :town, id: :patient_town, :class => "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :contact_number %>
+      <%= form.text_field :number, id: :patient_number, :class => "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :contact_method %>
+      <%= form.select :contactmethod, [["", ""], ["Phone", "Phone"], ["Email", "Email"]], {}, {class: "form-control"} %>
+    </div>
+
+    <br>
+
+    <div class="actions">
+      <%= form.submit :class => "btn btn-success pull-right" %>
+    </div>
+
+  </div>
+</div>
 <% end %>
