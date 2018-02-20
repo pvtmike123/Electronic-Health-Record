@@ -24,6 +24,9 @@ gem 'jquery-rails'
 
 gem 'devise'
 
+gem 'chartkick'
+gem 'groupdate'
+
 
 
 # Use CoffeeScript for .coffee assets and views

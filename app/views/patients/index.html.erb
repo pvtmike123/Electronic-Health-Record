@@ -51,8 +51,7 @@
               <div class="col-xs-3">
                 <i class="fa fa-search fa-5x"></i>
               </div>
-              <div class="col-xs-9 text-right">
-              </div>
+              <div class="col-xs-9 text-right"></div>
             </div>
           </div>
           <a href="#">
@@ -73,8 +72,7 @@
               <div class="col-xs-3">
                 <i class="fa fa-pencil-square fa-5x"></i>
               </div>
-              <div class="col-xs-9 text-right">
-              </div>
+              <div class="col-xs-9 text-right"></div>
             </div>
           </div>
           <a href="#">
@@ -95,8 +93,7 @@
               <div class="col-xs-3">
                 <i class="fa fa-trash fa-5x"></i>
               </div>
-              <div class="col-xs-9 text-right">
-              </div>
+              <div class="col-xs-9 text-right"></div>
             </div>
           </div>
           <a href="#">
@@ -122,38 +119,45 @@
               Area Chart</h3>
           </div>
           <div class="panel-body">
-            <div id="morris-area-chart"><table class="table table-bordered table-hover table-striped">
-              <thead>
-                <tr>
-                  <th>Forename</th>
-                  <th>Surname</th>
-                  <th>Age</th>
-                  <th>Postcode</th>
-                  <th>View</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @patients.each do |patient| %>
+            <div id="morris-area-chart">
+              <table class="table table-bordered table-hover table-striped">
+                <thead>
                   <tr>
-                    <td><%= patient.forename %></td>
-                    <td><%= patient.surname %></td>
-                    <td><%= patient.age %></td>
-                    <td><%= patient.postcode %></td>
-                    <td><%= link_to 'View', patient, class: "btn btn-warning" %></td>
-                    <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+                    <th>Forename</th>
+                    <th>Surname</th>
+                    <th>Age</th>
+                    <th>Postcode</th>
+                    <th>View</th>
+                    <th>Delete</th>
                   </tr>
-                <% end %>
-              </tbody>
-            </table></div>
+                </thead>
+                <tbody>
+                  <% @patients.each do |patient| %>
+                    <tr>
+                      <td><%= patient.forename %></td>
+                      <td><%= patient.surname %></td>
+                      <td><%= patient.age %></td>
+                      <td><%= patient.postcode %></td>
+                      <td><%= link_to 'View', patient, class: "btn btn-warning" %></td>
+                      <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <!-- /.row -->
 
-</div>
-<!-- /#page-wrapper -->
+    <%= geo_chart Patient.group(:town).count %>
+
+
+
+
+  </div>
+  <!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->
