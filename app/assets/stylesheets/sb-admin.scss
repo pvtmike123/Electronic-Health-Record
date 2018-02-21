@@ -256,5 +256,9 @@ ul.alert-dropdown {
 }
 
 #login-box{
-  margin-top:50% !important;
+  position: fixed;
+  top: 65%;
+  left: 57%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
