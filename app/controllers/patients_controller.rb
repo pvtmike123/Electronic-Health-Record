@@ -5,7 +5,8 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all.order("created_at DESC").limit(10)
+    @patients = Patient.all.order("updated_at ASC")
+    @patients = Patient.search(params[:search])
   end
 
   # GET /patients/1
@@ -57,7 +58,7 @@ class PatientsController < ApplicationController
   def destroy
     @patient.destroy
     respond_to do |format|
-      format.html { redirect_to patients_url, notice: 'Patient was successfully destroyed.', class: "destroy" }
+      format.html { redirect_to patients_url, notice: 'Patient was successfully removed.', class: "destroy" }
       format.json { head :no_content }
     end
   end

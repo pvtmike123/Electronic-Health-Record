@@ -1,0 +1,30 @@
+<h1>Search Records</h1>
+
+<% if@search.search_patients.empty? %>
+
+<p>
+  No records found
+</p>
+
+<% else %>
+
+<% @search.search_patients.each do |c| %>
+
+<h1><%= c.forename %></h1>
+<p>
+  <%= c.surname %>
+</p>
+
+<p>
+  <%= c.town %>
+</p>
+
+<p>
+  <%= c.age %>
+</p>
+
+<%= link_to 'View', patient_url, class: "btn btn-warning" %>
+
+<% end %>
+
+<% end %>

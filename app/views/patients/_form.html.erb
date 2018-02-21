@@ -42,12 +42,21 @@
 
     <div class="field">
       <%= form.label :sex %>
-      <%= form.select :sex, [["", ""], ["Male", "Male"], ["Female", "Female"]], {}, {class: "form-control"} %>
+      <%= form.select :sex, [["", ""], ["Male", "Male"], ["Female", "Female"], ["Transgender", "Transgender"]], {}, {class: "form-control"} %>
+    </div>
+
+    <br />
+    <div class="actions">
+        <%= link_to 'Delete Patient', patient, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right" %>
     </div>
 
   </div>
   <div class="col-md-6">
 
+    <div class="field">
+      <%= form.label :Country_of_birth %>
+      <%= form.text_field :county, id: :patient_county, :class => "form-control" %>
+    </div>
 
     <div class="field">
       <%= form.label :address %>
@@ -57,11 +66,6 @@
     <div class="field">
       <%= form.label :postcode %>
       <%= form.text_field :postcode, id: :patient_postcode, :class => "form-control" %>
-    </div>
-
-    <div class="field">
-      <%= form.label :county %>
-      <%= form.text_field :county, id: :patient_county, :class => "form-control" %>
     </div>
 
     <div class="field">

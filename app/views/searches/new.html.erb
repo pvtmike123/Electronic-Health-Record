@@ -1,0 +1,82 @@
+<div id="page-wrapper">
+
+  <div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">
+          Advanced
+          <small>Search</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li class="active">
+            <i class="fa fa-dashboard"></i>
+            Search
+          </li>
+        </ol>
+        <% if flash[:notice] %>
+          <div class="alert alert-danger alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <%= flash[:notice] %></div>
+        <% end %>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-green">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <i class="fa fa-search fa-1x"></i>
+              Advanced Search</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-6">
+                <%= form_for @search, html: {class: "pure-form"} do |s| %>
+
+                <%= s.label :forename %>
+                <%= s.text_field :forename, :class => "form-control" %>
+
+                <%= s.label :surname %>
+                <%= s.text_field :surname, :class => "form-control" %>
+
+                <%= s.label :town %>
+                <%= s.text_field :town, :class => "form-control" %>
+
+
+              </div>
+
+              <div class="col-md-6">
+
+                <%= s.label :age %>
+                <%= s.text_field :age, :class => "form-control" %>
+
+                <%= s.label :sex %>
+                <%= s.select :sex, [["", ""], ["Male", "Male"], ["Female", "Female"], ["Transgender", "Transgender"]], {}, {class: "form-control"} %>
+
+                <br />
+
+                <div class="actions">
+                  <%= s.submit "Search", class: "btn btn-success pull-right" %>
+                </div>
+
+                <% end %>
+
+
+              </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
