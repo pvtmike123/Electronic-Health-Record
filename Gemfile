@@ -27,6 +27,8 @@ gem 'devise'
 gem 'chartkick'
 gem 'groupdate'
 
+gem "paperclip", "~> 5.2.1"
+
 
 
 # Use CoffeeScript for .coffee assets and views
