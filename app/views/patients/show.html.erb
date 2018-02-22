@@ -6,8 +6,9 @@
     <div class="row">
       <div class="col-lg-12">
         <h1 class="page-header">
-          Patient
-          <small>No.
+          <%= @patient.forename %>
+          <%= @patient.surname %>
+          <small>Patient No.
             <%= @patient.id %>
           </small>
         </h1>
@@ -27,12 +28,27 @@
     <!-- /.row -->
 
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-2">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <i class="fa fa-image fa-fw"></i>
+              Profile Image</h3>
+          </div>
+          <div class="panel-body">
+
+            <%= image_tag @patient.image.url(:thumb), :class => "profile-image" %>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-10">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">
               <i class="fa fa-user fa-fw"></i>
-              <%= @patient.forename %> <%= @patient.surname %></h3>
+              <%= @patient.forename %>
+              <%= @patient.surname %></h3>
           </div>
           <div class="panel-body">
 

@@ -12,7 +12,7 @@
         <ol class="breadcrumb">
           <li class="active">
             <i class="fa fa-dashboard"></i>
-            Home
+            Patients / Home
           </li>
         </ol>
         <% if flash[:notice] %>
@@ -133,8 +133,8 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">
-            <i class="fa fa-bar-chart-o fa-fw"></i>
-            Patient List (last 10 updated)</h3>
+            <i class="fa fa-users fa-fw"></i>
+            Patient List</h3>
         </div>
         <div class="panel-body">
           <div id="morris-area-chart">
@@ -159,7 +159,7 @@
                     <td><%= patient.postcode %></td>
                     <td><%= patient.town %></td>
                     <td><%= patient.number %></td>
-                    <td><%= link_to 'View', patient, class: "btn btn-primary" %></td>
+                    <td><%= link_to 'View', patient, class: "btn btn-default" %></td>
                   </tr>
                 <% end %>
               </tbody>

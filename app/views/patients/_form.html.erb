@@ -1,4 +1,4 @@
-<%= form_with(model: patient, local: true) do |form| %>
+<%= form_with(model: patient, local: true, html: { multipart: true }) do |form| %>
 <% if patient.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(patient.errors.count, "error") %>
@@ -46,8 +46,11 @@
     </div>
 
     <br />
+    <br />
+    <br />
+
     <div class="actions">
-        <%= link_to 'Delete Patient', patient, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right" %>
+        <%= link_to 'Delete Patient', patient, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-left", :id => "delete-button" %>
     </div>
 
   </div>
@@ -81,6 +84,11 @@
     <div class="field">
       <%= form.label :contact_method %>
       <%= form.select :contactmethod, [["", ""], ["Phone", "Phone"], ["Email", "Email"]], {}, {class: "form-control"} %>
+    </div>
+
+    <div class="field">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
     </div>
 
     <br>
