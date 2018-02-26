@@ -46,6 +46,10 @@
                 <%= s.label :town %>
                 <%= s.text_field :town, :class => "form-control" %>
 
+                <br />
+
+                <button type="reset" class="btn btn-default pull-left">Clear Form</button>
+
 
               </div>
 
@@ -56,6 +60,9 @@
 
                 <%= s.label :sex %>
                 <%= s.select :sex, [["", ""], ["Male", "Male"], ["Female", "Female"], ["Transgender", "Transgender"]], {}, {class: "form-control"} %>
+
+                <%= s.label :Post_code %>
+                <%= s.text_field :postcode, :class => "form-control" %>
 
                 <br />
 

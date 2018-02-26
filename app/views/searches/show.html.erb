@@ -1,30 +1,132 @@
-<h1>Search Records</h1>
+<div id="page-wrapper">
 
-<% if@search.search_patients.empty? %>
+  <div class="container-fluid">
 
-<p>
-  No records found
-</p>
+    <!-- Page Heading -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">
+          Search
+          <small>Records</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li class="active">
+            <i class="fa fa-dashboard"></i>
+            Search
+          </li>
+        </ol>
+        <% if flash[:notice] %>
+          <div class="alert alert-danger alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <%= flash[:notice] %></div>
+        <% end %>
+      </div>
+    </div>
+    <!-- /.row -->
 
-<% else %>
+    <% if@search.search_patients.empty? %>
 
-<% @search.search_patients.each do |c| %>
+      <div class="alert alert-danger alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Warning!</strong>
+        No search records found containing the criteria you entered.
+      </div>
 
-<h1><%= c.forename %></h1>
-<p>
-  <%= c.surname %>
-</p>
+      <input action="action" onclick="window.history.go(-1); return false;" class="btn btn-default" type="button" value="Back" />
 
-<p>
-  <%= c.town %>
-</p>
+    <% else %>
 
-<p>
-  <%= c.age %>
-</p>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                <i class="fa fa-search fa-1x"></i>
+                Search Results</h3>
+            </div>
+            <div class="panel-body">
 
-<%= link_to 'View', patient_url, class: "btn btn-warning" %>
+              <div class="row">
+                <% @search.search_patients.each do |c| %>
+                  <div class="col-md-4">
+                    <div class="thumbnail">
+                      <!-- <%= image_tag c.image.url(:meduim), :class => 'img-circle', :style => 'width:100px;height:100px' %> -->
+                      <div class="caption">
+                        <h3><%= c.forename %>
+                          <%= c.surname %></h3>
+                        <p><%= c.age %></p>
+                        <p>ID No.
+                          <%= c.id %></p>
+                        <p>
+                          <%= link_to 'View', patient_path(c.id), class: "btn btn-primary" %>
+                        </p>
+                      </div>
+                    </div>
 
-<% end %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="col-lg-6">
+          <div class="panel panel-green">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                <i class="fa fa-search fa-1x"></i>
+                Advanced Search</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-6">
+
+                  <%= form_for @search, html: {class: "pure-form"} do |s| %>
+
+                  <%= s.label :forename %>
+                  <%= s.text_field :forename, :class => "form-control" %>
+
+                  <%= s.label :surname %>
+                  <%= s.text_field :surname, :class => "form-control" %>
+
+                  <%= s.label :town %>
+                  <%= s.text_field :town, :class => "form-control" %>
+
+                </div>
+
+                <div class="col-md-6">
+
+                  <%= s.label :age %>
+                  <%= s.text_field :age, :class => "form-control" %>
+
+                  <%= s.label :sex %>
+                  <%= s.select :sex, [["", ""], ["Male", "Male"], ["Female", "Female"], ["Transgender", "Transgender"]], {}, {class: "form-control"} %>
+
+                  <br />
+
+                  <div class="actions">
+                    <%= s.submit "Search", class: "btn btn-success pull-right" %>
+                    <br />
+                    <br />
+                  </div>
+
+                  <% end %>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+  </div>
 
 <% end %>

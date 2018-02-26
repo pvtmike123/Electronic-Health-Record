@@ -9,6 +9,7 @@ class Search < ApplicationRecord
     patient = patient.where(["town LIKE ?","%#{town}%"]) if town.present?
     patient = patient.where(["sex LIKE ?","%#{sex}%"]) if sex.present?
     patient = patient.where(["age LIKE ?","%#{age}%"]) if age.present?
+    patient = patient.where(["postcode LIKE ?","%#{postcode}%"]) if postcode.present?
 
     return patient
   end
