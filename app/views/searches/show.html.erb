@@ -32,7 +32,7 @@
         No search records found containing the criteria you entered.
       </div>
 
-      <input action="action" onclick="window.history.go(-1); return false;" class="btn btn-default" type="button" value="Back" />
+      <input action="action" onclick="window.history.go(-1); return false;" class="btn btn-default" type="button" value="Back"/>
 
     <% else %>
 
@@ -76,7 +76,7 @@
             <div class="panel-heading">
               <h3 class="panel-title">
                 <i class="fa fa-search fa-1x"></i>
-                Advanced Search</h3>
+                Refine Search</h3>
             </div>
             <div class="panel-body">
               <div class="row">
@@ -93,6 +93,10 @@
                   <%= s.label :town %>
                   <%= s.text_field :town, :class => "form-control" %>
 
+                  <br/>
+
+                  <button type="reset" class="btn btn-default pull-left">Clear Form</button>
+
                 </div>
 
                 <div class="col-md-6">
@@ -103,30 +107,32 @@
                   <%= s.label :sex %>
                   <%= s.select :sex, [["", ""], ["Male", "Male"], ["Female", "Female"], ["Transgender", "Transgender"]], {}, {class: "form-control"} %>
 
-                  <br />
+                  <%= s.label :post_code %>
+                  <%= s.text_field :postcode, :class => "form-control" %>
+
+                  <br/>
 
                   <div class="actions">
                     <%= s.submit "Search", class: "btn btn-success pull-right" %>
-                    <br />
-                    <br />
+
                   </div>
 
-                  <% end %>
-
-                </div>
+                <% end %>
 
               </div>
+
             </div>
           </div>
         </div>
-        <!-- /.row -->
-
       </div>
-      <!-- /#page-wrapper -->
+      <!-- /.row -->
 
     </div>
-    <!-- /#wrapper -->
+    <!-- /#page-wrapper -->
 
   </div>
+  <!-- /#wrapper -->
+
+</div>
 
 <% end %>
