@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :patients
   resources :searches
+  resources :logs
   root 'home#index'
 
   scope module: "event" do
