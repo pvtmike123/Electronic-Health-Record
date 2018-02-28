@@ -29,6 +29,8 @@ gem 'groupdate'
 
 gem "paperclip", "~> 5.2.1"
 
+gem "simple_calendar", "~> 2.0"
+
 
 
 # Use CoffeeScript for .coffee assets and views
