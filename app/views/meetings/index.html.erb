@@ -79,7 +79,7 @@
           </div>
           <a href="/searches/new">
             <div class="panel-footer">
-              <span class="pull-left">Edit Patient</span>
+              <span class="pull-left">Edit Appiontment</span>
               <span class="pull-right">
                 <i class="fa fa-arrow-circle-right"></i>
               </span>
@@ -100,7 +100,7 @@
           </div>
           <a href="/searches/new">
             <div class="panel-footer">
-              <span class="pull-left">Delete Patient</span>
+              <span class="pull-left">Delete Appiontment</span>
               <span class="pull-right">
                 <i class="fa fa-arrow-circle-right"></i>
               </span>
@@ -113,6 +113,7 @@
     <!-- /.row -->
 
     <div class="row">
+      <section style="height:100%">
       <div class="col-lg-6">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -152,14 +153,17 @@
         </div>
       </div>
 
+      </section>
+      
+      <section style="height:100%">
       <div class="col-lg-6">
-        <div class="panel panel-default">
+        <div class="panel panel-default" id="Weekly-appiontments" >
           <div class="panel-heading">
             <h3 class="panel-title">
               <i class="fa fa-calendar fa-fw"></i>
               Weekly Appiontments</h3>
           </div>
-          <div class="panel-body" id="Weekly-appiontments">
+          <div class="panel-body">
             <div id="morris-area-chart">
               <%= calendar number_of_days: 7, events: @meetings do |date, meetings| %>
                 <%= date.day %>
@@ -175,6 +179,7 @@
         </div>
       </div>
     </div>
+  </section>
   </div>
   <!-- /.row -->
 </div>
