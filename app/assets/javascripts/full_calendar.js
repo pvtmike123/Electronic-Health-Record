@@ -4,16 +4,17 @@ initialize_calendar = function() {
     var calendar = $(this);
     calendar.fullCalendar({
       header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay'
-      },
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay'
+    },
       selectable: true,
       selectHelper: true,
       editable: false,
       eventLimit: true,
       events: '/events.json',
       height: 'parent',
+      defaultView: 'agendaWeek',
       businessHours: true,
       businessHours: {
         start: '09:00',
