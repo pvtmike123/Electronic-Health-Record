@@ -29,9 +29,8 @@ gem 'groupdate'
 
 gem "paperclip", "~> 5.2.1"
 
-gem "simple_calendar", "~> 2.0"
-
-
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

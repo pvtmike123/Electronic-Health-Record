@@ -19,16 +19,6 @@
     </div>
     <!-- /.row -->
 
-    <%= month_calendar events: @meetings do |date, meetings| %>
-    <%= date.day %>
+    <div class='calendar'></div>
 
-    <% meetings.each do |meeting| %>
-      <div class="meetings">
-        <a><%= link_to meeting.name, meeting %></a>
-      </div>
-    <% end %>
-  <% end %>
-
-</div>
-
-</div
+  </div>

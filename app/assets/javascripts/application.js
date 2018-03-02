@@ -15,5 +15,7 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require turbolinks
+//= require moment
+//= require fullcalendar
 //= require chartkick
 //= require_tree .

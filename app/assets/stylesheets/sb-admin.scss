@@ -4,8 +4,12 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 /* Global Styles */
+html{
+  height: 100%;
+}
 body {
   margin-top: 100px;
+  height: 100%;
 }
 @media(min-width:768px) {
   body {
@@ -13,11 +17,11 @@ body {
   }
 }
 
-#delete-button{
+#delete-button {
   margin-top: 5px !important;
 }
 
-.profile-image{
+.profile-image {
   width: 100%;
   border: 1.5px solid #ddd;
   border-radius: 4px;
@@ -29,12 +33,19 @@ body {
 
 #wrapper {
   padding-left: 0;
+  height: 100%;
+}
+
+.container-fluid{
+  height: 100% !important;
 }
 
 #page-wrapper {
   width: 100%;
   padding: 0;
   background-color: #fff;
+  overflow: auto;
+  height: 100% !important;
 }
 
 .huge {
@@ -256,16 +267,14 @@ ul.alert-dropdown {
   color: #df8a13;
 }
 
-.login-panel{
+.login-panel {
   width: 500px;
   max-width: 500px !important;
 }
 
-.panel-default{
+.panel-default {}
 
-}
-
-#login-box{
+#login-box {
   position: fixed;
   top: 50%;
   left: 50%;
