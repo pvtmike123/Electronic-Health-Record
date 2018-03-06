@@ -31,7 +31,8 @@
                 <i class="fa fa-user fa-5x"></i>
               </div>
               <div class="col-xs-9 text-right">
-                <div class="huge">  of 200</div>
+                <div class="huge">
+                  of 200</div>
                 <div>Total Patient Capacity</div>
               </div>
             </div>
@@ -55,12 +56,10 @@
                 <i class="fa fa-calendar fa-5x"></i>
               </div>
               <div class="col-xs-9 text-right">
-                <div class="huge"></div>
-                <div></div>
               </div>
             </div>
           </div>
-          <a href="/events">
+          <a href="/calendar">
             <div class="panel-footer">
               <span class="pull-left">View Calendar</span>
               <span class="pull-right">
@@ -79,8 +78,6 @@
                 <i class="fa fa-pencil-square fa-5x"></i>
               </div>
               <div class="col-xs-9 text-right">
-                <div class="huge">124</div>
-                <div>New Orders!</div>
               </div>
             </div>
           </div>
@@ -103,8 +100,6 @@
                 <i class="fa fa-trash fa-5x"></i>
               </div>
               <div class="col-xs-9 text-right">
-                <div class="huge">13</div>
-                <div>Support Tickets!</div>
               </div>
             </div>
           </div>
@@ -122,35 +117,58 @@
     </div>
     <!-- /.row -->
 
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Start time</th>
-          <th>End time</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <i class="fa fa-users fa-fw"></i>
+              Appiontment List</h3>
+          </div>
+          <div class="panel-body">
+            <div id="morris-area-chart">
+              <table class="table table-bordered table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Start time</th>
+                    <th>End time</th>
+                    <th>View</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @events.each do |event| %>
+                    <tr>
+                      <td><%= event.title %></td>
+                      <td><%= event.description %></td>
+                      <td><%= event.start_time %></td>
+                      <td><%= event.end_time %></td>
+                      <td><%= link_to 'View', event, class: "btn btn-default" %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <tbody>
-        <% @events.each do |event| %>
-          <tr>
-            <td><%= event.title %></td>
-            <td><%= event.description %></td>
-            <td><%= event.start_time %></td>
-            <td><%= event.end_time %></td>
-            <td><%= link_to 'Show', event %></td>
-            <td><%= link_to 'Edit', edit_event_path(event) %></td>
-            <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+      <div class="col-lg-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <i class="fa fa-users fa-fw"></i>
+              Appiontment List</h3>
+          </div>
+          <div class="panel-body">
+              <div class='calendar'></div>
+          </div>
+        </div>
+      </div>
 
-    <br>
-
-    <%= link_to 'New Event', new_event_path %>
+    </div>
+    <!-- /.row -->
 
   </div>
 

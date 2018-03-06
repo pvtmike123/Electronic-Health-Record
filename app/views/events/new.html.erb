@@ -12,7 +12,7 @@
         <ol class="breadcrumb">
           <li class="active">
             <i class="fa fa-dashboard"></i>
-            Home
+            Home / New Appiontment
           </li>
         </ol>
 
@@ -28,21 +28,17 @@
           <div class="panel-heading">
             <h3 class="panel-title">
               <i class="fa fa-user fa-fw"></i>
-              New Patient</h3>
+              New Appiontment</h3>
           </div>
           <div class="panel-body">
 
-          <%= render 'form', event: @event %>
+            <%= render 'form', event: @event %>
 
           </div>
         </div>
       </div>
     </div>
     <!-- /.row -->
-
-    <%= render 'form', event: @event %>
-
-    <%= link_to 'Back', events_path %>
 
   </div>
 

@@ -48,6 +48,8 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap3-datetimepicker-rails (4.17.47)
+      momentjs-rails (>= 2.8.1)
     builder (3.2.3)
     byebug (9.1.0)
     capybara (2.17.0)
@@ -81,6 +83,8 @@ GEM
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.3)
+      railties (>= 3.2, < 5.2)
     fullcalendar-rails (3.4.0.0)
       jquery-rails (>= 4.0.5, < 5.0.0)
       jquery-ui-rails (>= 5.0.2)
@@ -222,11 +226,13 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.7)
+  bootstrap3-datetimepicker-rails (~> 4.17.47)
   byebug
   capybara (~> 2.13)
   chartkick
   coffee-rails (~> 4.2)
   devise
+  font-awesome-rails
   fullcalendar-rails
   groupdate
   jbuilder (~> 2.5)

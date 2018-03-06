@@ -1,6 +1,45 @@
-<h1>Editing Event</h1>
+<div id="page-wrapper">
 
-<%= render 'form', event: @event %>
+  <div class="container-fluid">
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+    <!-- Page Heading -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">
+          Edit
+          <small>Appiontment</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li class="active">
+            <i class="fa fa-dashboard"></i>
+            Home / Edit Appiontment
+          </li>
+        </ol>
+
+        <p id="notice"><%= notice %></p>
+
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <i class="fa fa-user fa-fw"></i>
+              New Appiontment</h3>
+          </div>
+          <div class="panel-body">
+
+            <%= render 'form', event: @event %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+
+</div>

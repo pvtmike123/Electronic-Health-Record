@@ -16,6 +16,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require moment
+//= require bootstrap-datetimepicker
 //= require fullcalendar
 //= require chartkick
 //= require_tree .
