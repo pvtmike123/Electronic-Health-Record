@@ -30,6 +30,8 @@
       <%= form.text_field :end_time, id: :event_end_time, :class => "form-control", :id => "datetimepicker2" %>
     </div>
 
+    <br />
+
     <div class="actions">
         <%= link_to 'Delete Event', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-left" %>
     </div>
@@ -42,6 +44,8 @@
       <%= form.text_area :description, id: :event_description, :class => "form-control", :rows => "7" %>
     </div>
 
+    <br />
+
     <div class="actions">
       <%= form.submit :class => "btn btn-success pull-right" %>
     </div>
@@ -52,9 +56,13 @@
 
 <script type="text/javascript">
 $(function () {
-  $('#datetimepicker1').datetimepicker();
+  $('#datetimepicker1').datetimepicker({
+    format: "DD-MM-YYYY hh:mm"
+  });
 });
 $(function () {
-  $('#datetimepicker2').datetimepicker();
+  $('#datetimepicker2').datetimepicker({
+    format: "DD-MM-YYYY hh:mm"
+  });
 });
 </script>

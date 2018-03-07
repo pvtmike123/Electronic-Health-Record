@@ -31,9 +31,8 @@
                 <i class="fa fa-user fa-5x"></i>
               </div>
               <div class="col-xs-9 text-right">
-                <div class="huge">
-                  of 200</div>
-                <div>Total Patient Capacity</div>
+                <div class="huge"><%= @events.count %></div>
+                <div>Total Number of events</div>
               </div>
             </div>
           </div>
@@ -118,7 +117,7 @@
     <!-- /.row -->
 
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-12">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">
@@ -142,27 +141,14 @@
                     <tr>
                       <td><%= event.title %></td>
                       <td><%= event.description %></td>
-                      <td><%= event.start_time %></td>
-                      <td><%= event.end_time %></td>
+                      <td><%= event.start_time.to_date %></td>
+                      <td><%= event.end_time.to_date %></td>
                       <td><%= link_to 'View', event, class: "btn btn-default" %></td>
                     </tr>
                   <% end %>
                 </tbody>
               </table>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <i class="fa fa-users fa-fw"></i>
-              Appiontment List</h3>
-          </div>
-          <div class="panel-body">
-              <div class='calendar'></div>
           </div>
         </div>
       </div>

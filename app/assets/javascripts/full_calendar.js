@@ -47,5 +47,28 @@ initialize_calendar = function() {
       }
     });
   })
+
+  $(function() {
+    $('#calendar1').fullCalendar({
+      defaultView: 'listDay',
+
+      // customize the button names,
+      // otherwise they'd all just say "list"
+      views: {
+        listDay: { buttonText: 'list day' },
+        listWeek: { buttonText: 'list week' },
+        listMonth: { buttonText: 'list month' }
+      },
+
+      header: {
+        left: 'title',
+        center: '',
+        right: 'listDay,listWeek,listMonth'
+      },
+      events: '/events.json',
+      height: 200
+    })
+  });
 };
+
 $(document).on('turbolinks:load', initialize_calendar);

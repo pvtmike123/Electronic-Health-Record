@@ -47,8 +47,8 @@
                       <td><%= patient.id %></td>
                       <td><%= patient.forename %></td>
                       <td><%= patient.surname %></td>
-                      <td><%= patient.created_at %></td>
-                      <td><%= patient.updated_at %></td>
+                      <td><%= patient.created_at.to_date %></td>
+                      <td><%= patient.updated_at.to_date %></td>
                       <td><%= link_to 'View', patient, class: "btn btn-default" %></td>
                     </tr>
                   <% end %>
@@ -81,8 +81,8 @@
                   <% @searches.order('created_at DESC').limit(12).each do |search| %>
                     <tr>
                       <td><%= search.id %></td>
-                      <td><%= search.created_at %></td>
-                      <td><%= search.updated_at %></td>
+                      <td><%= search.created_at.to_date %></td>
+                      <td><%= search.updated_at.to_date %></td>
                       <td><%= link_to 'View', search, class: "btn btn-default" %></td>
                     </tr>
                   <% end %>
