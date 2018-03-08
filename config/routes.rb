@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   resources :patients
   resources :searches
   resources :logs
+  
   root 'home#index'
   get 'calendar' => 'calendar#index', as: 'calendar'
+  get 'about' => 'about#index', as: 'about'
+  get 'help' => 'help#index', as: 'help'
 
   scope module: "event" do
    get "check_in/:event_date_id", to: "event#check_in", as: :check_in
