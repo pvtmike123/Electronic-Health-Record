@@ -5,8 +5,7 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all.order("updated_at ASC")
-    @patients = Patient.search(params[:search])
+    @patients = Patient.all.order("updated_at ASC").where(:user_id => current_user.id)
   end
 
   # GET /patients/1
@@ -27,6 +26,7 @@ class PatientsController < ApplicationController
   # POST /patients.json
   def create
     @patient = Patient.new(patient_params)
+    @patient.user_id = current_user.id
 
     respond_to do |format|
       if @patient.save

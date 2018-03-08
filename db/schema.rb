@@ -10,31 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180301193415) do
+ActiveRecord::Schema.define(version: 20180307174915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "appointments", force: :cascade do |t|
-    t.string "name"
-    t.string "phone_number"
-    t.datetime "time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "patient"
-  end
-
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "meetings", force: :cascade do |t|
-    t.string "name"
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at", null: false
@@ -60,6 +43,7 @@ ActiveRecord::Schema.define(version: 20180301193415) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.integer "user_id"
   end
 
   create_table "searches", force: :cascade do |t|
