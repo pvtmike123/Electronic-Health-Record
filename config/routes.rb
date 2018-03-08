@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   resources :patients
   resources :searches
   resources :logs
-  
+
+  resources :conversations do
+    resources :messages
+  end
+
   root 'home#index'
   get 'calendar' => 'calendar#index', as: 'calendar'
   get 'about' => 'about#index', as: 'about'

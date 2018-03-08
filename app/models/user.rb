@@ -6,4 +6,14 @@ class User < ApplicationRecord
 
   has_many :patients
 
+  acts_as_messageable
+
+  def email
+    "User #{id}"
+  end
+
+  def mailboxer_email(object)
+    nil
+  end 
+
 end
