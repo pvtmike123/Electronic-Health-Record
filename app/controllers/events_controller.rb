@@ -15,6 +15,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @patients = Patient.all
   end
 
   # GET /events/1/edit
@@ -25,6 +26,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @patients = Patient.all(patient_params)
 
     respond_to do |format|
       if @event.save
@@ -70,5 +72,9 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:title, :description, :start_time, :end_time)
+    end
+
+    def patient_params
+      params.require(:patient).permit(:forename)
     end
 end

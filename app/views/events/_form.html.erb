@@ -20,6 +20,11 @@
       <%= form.text_field :title, id: :event_title, :class => "form-control" %>
     </div>
 
+  <!--  <div class="field">
+      <%= form.label :Patient %>
+      <%= form.collection_select :id, @patients, :id, :forename, { class: "form-dropdown" } %>
+    </div> -->
+
     <div class="field">
       <%= form.label :start_time %>
       <%= form.text_field :start_time, id: :event_start_time, :class => "form-control", :id => "datetimepicker1" %>
