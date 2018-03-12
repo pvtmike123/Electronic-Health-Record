@@ -8,12 +8,8 @@ class User < ApplicationRecord
 
   acts_as_messageable
 
-  def email
-    "User #{id}"
-  end
-
   def mailboxer_email(object)
     nil
-  end 
+  end
 
 end
