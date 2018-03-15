@@ -131,13 +131,13 @@
                   <tr>
                     <th>Title</th>
                     <th>Description</th>
-                    <th>Start time</th>
+                    <th>Date</th>
                     <th>End time</th>
                     <th>View</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <% @events.each do |event| %>
+                  <% @events.order('created_at DESC').limit(9).each do |event| %>
                     <tr>
                       <td><%= event.title %></td>
                       <td><%= event.description %></td>
