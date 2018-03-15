@@ -20,10 +20,10 @@
       <%= form.text_field :title, id: :event_title, :class => "form-control" %>
     </div>
 
-  <!--  <div class="field">
+  <div class="field">
       <%= form.label :Patient %>
-      <%= form.collection_select :id, @patients, :id, :forename, { class: "form-dropdown" } %>
-    </div> -->
+      <%= form.collection_select :patient, Patient.all, :surname, :surname, { class: "form-dropdown" } %>
+    </div>
 
     <div class="field">
       <%= form.label :start_time %>
@@ -62,12 +62,12 @@
 <script type="text/javascript">
 $(function () {
   $('#datetimepicker1').datetimepicker({
-    format: "DD-MM-YYYY hh:mm"
+    format: "DD-MM-YYYY HH:mm"
   });
 });
 $(function () {
   $('#datetimepicker2').datetimepicker({
-    format: "DD-MM-YYYY hh:mm"
+    format: "DD-MM-YYYY HH:mm"
   });
 });
 </script>

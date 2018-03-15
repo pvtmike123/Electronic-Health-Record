@@ -14,6 +14,9 @@ initialize_calendar = function() {
       eventLimit: true,
       events: '/events.json',
       height: 'parent',
+      timeFormat: {
+        agenda: 'H' //h:mm{ - h:mm}'
+    },
       defaultView: 'agendaWeek',
       businessHours: true,
       businessHours: {
