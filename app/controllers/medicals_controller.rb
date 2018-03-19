@@ -71,7 +71,7 @@ class MedicalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def medical_params
-      params.require(:medical).permit(:allergies, :smoker)
+      params.require(:medical).permit(:allergies, :smoker, :drug, :blood, :diabetes, :pregnant, :asthma, :sti, :Hayfever)
     end
 
     # Use callbacks to share common setup or constraints between actions.

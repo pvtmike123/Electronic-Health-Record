@@ -16,7 +16,12 @@
 
     <div class="field">
       <%= form.label :allergies %>
-      <%= form.text_field :allergies, id: :medical_allergies, :class => "form-control" %>
+      <%= form.text_area :allergies, id: :medical_allergies, :class => "form-control", :rows => "7" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :drug_allergies %>
+      <%= form.text_area :drug, id: :drugl_allergies, :class => "form-control", :rows => "8" %>
     </div>
 
   </div>
@@ -24,7 +29,32 @@
 
     <div class="field">
       <%= form.label :smoker %>
-      <%= form.text_field :smoker, id: :medical_smoker, :class => "form-control" %>
+      <%= form.select :smoker, [["", ""], ["Yes", "Yes"], ["No", "No"]], {}, {class: "form-control"} %>
+    </div>
+
+    <div class="field">
+      <%= form.label :pregnant %>
+      <%= form.select :pregnant, [["", ""], ["Yes", "Yes"], ["No", "No"]], {}, {class: "form-control"} %>
+    </div>
+
+    <div class="field">
+      <%= form.label :diabetes %>
+      <%= form.select :diabetes, [["", ""], ["Yes", "Yes"], ["No", "No"]], {}, {class: "form-control"} %>
+    </div>
+
+    <div class="field">
+      <%= form.label :asthma %>
+      <%= form.select :asthma, [["", ""], ["Yes", "Yes"], ["No", "No"]], {}, {class: "form-control"} %>
+    </div>
+
+    <div class="field">
+      <%= form.label :blood_group %>
+      <%= form.select :blood, [["", ""], ["Yes", "Yes"], ["No", "No"]], {}, {class: "form-control"} %>
+    </div>
+
+    <div class="field">
+      <%= form.label :Hayfever %>
+      <%= form.select :Hayfever, [["", ""], ["Yes", "Yes"], ["No", "No"]], {}, {class: "form-control"} %>
     </div>
 
     <br>

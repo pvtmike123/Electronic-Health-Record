@@ -29,9 +29,7 @@
 
     <div class="row">
       <div class="col-lg-4">
-        <a href="#" class="list-group-item text-center">
-          Personal Information
-        </a>
+      <%= link_to 'Personal Information', patient_path(), class: "list-group-item text-center" %>
       </div>
       <div class="col-lg-4">
         <%= link_to 'Medical Records', medical_path(), class: "list-group-item active text-center" %>
@@ -69,23 +67,3 @@
 
 </div>
 <!-- /#wrapper -->
-
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Allergies:</strong>
-  <%= @medical.allergies %>
-</p>
-
-<p>
-  <strong>Smoker:</strong>
-  <%= @medical.smoker %>
-</p>
-
-<%= @medical.id %>
-
-<%= @medical.patient_id %>
-
-<%= link_to 'Edit', edit_medical_path() %> |
-<%= link_to 'Back', medicals_path %>
