@@ -16,6 +16,7 @@ class PatientsController < ApplicationController
   # GET /patients/new
   def new
     @patient = Patient.new
+    @medical = Medical.create(params[:medical])
   end
 
   # GET /patients/1/edit
@@ -26,6 +27,7 @@ class PatientsController < ApplicationController
   # POST /patients.json
   def create
     @patient = Patient.new(patient_params)
+    @medical = @patient.create_medical(params[:patient_id])
     @patient.user_id = current_user.id
 
     respond_to do |format|
@@ -36,6 +38,8 @@ class PatientsController < ApplicationController
         format.html { render :new }
         format.json { render json: @patient.errors, status: :unprocessable_entity }
       end
+
+
     end
   end
 
@@ -72,5 +76,14 @@ class PatientsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
       params.require(:patient).permit(:forename, :surname, :age, :postcode, :sex, :county, :address, :number, :contactmethod, :email, :town, :title, :image)
+    end
+
+    def set_medical
+      @medical = Medical.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def medical_params
+      params.require(:medical).permit(:allergies, :smoker)
     end
 end

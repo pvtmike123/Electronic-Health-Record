@@ -29,12 +29,12 @@
 
     <div class="row">
       <div class="col-lg-4">
-        <a href="#" class="list-group-item active text-center">
+        <a href="#" class="list-group-item text-center">
           Personal Information
         </a>
       </div>
       <div class="col-lg-4">
-        <%= link_to 'Medical Records', medical_path(), class: "list-group-item text-center" %>
+        <%= link_to 'Medical Records', medical_path(), class: "list-group-item active text-center" %>
       </div>
       <div class="col-lg-4">
         <a href="#" class="list-group-item text-center">Appointment History</a>
@@ -46,21 +46,7 @@
     <br />
 
     <div class="row">
-      <div class="col-lg-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <i class="fa fa-image fa-fw"></i>
-              Profile Image</h3>
-          </div>
-          <div class="panel-body">
-
-            <%= image_tag @patient.image.url(:thumb), :class => "profile-image" %>
-
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-10">
+      <div class="col-lg-12">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">
@@ -70,7 +56,7 @@
           </div>
           <div class="panel-body">
 
-            <%= render 'form', patient: @patient %>
+            <%= render 'form', medical: @medical %>
 
           </div>
         </div>
@@ -83,3 +69,23 @@
 
 </div>
 <!-- /#wrapper -->
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Allergies:</strong>
+  <%= @medical.allergies %>
+</p>
+
+<p>
+  <strong>Smoker:</strong>
+  <%= @medical.smoker %>
+</p>
+
+<%= @medical.id %>
+
+<%= @medical.patient_id %>
+
+<%= link_to 'Edit', edit_medical_path() %> |
+<%= link_to 'Back', medicals_path %>

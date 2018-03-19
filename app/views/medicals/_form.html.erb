@@ -1,0 +1,38 @@
+<%= form_with(model: medical, local: true) do |form| %>
+  <% if medical.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(medical.errors.count, "error") %> prohibited this medical from being saved:</h2>
+
+      <ul>
+      <% medical.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+  <div class="col-md-6">
+
+    <div class="field">
+      <%= form.label :allergies %>
+      <%= form.text_field :allergies, id: :medical_allergies, :class => "form-control" %>
+    </div>
+
+  </div>
+  <div class="col-md-6">
+
+    <div class="field">
+      <%= form.label :smoker %>
+      <%= form.text_field :smoker, id: :medical_smoker, :class => "form-control" %>
+    </div>
+
+    <br>
+
+    <div class="actions">
+      <%= form.submit :class => "btn btn-success pull-right" %>
+    </div>
+    <% end %>
+
+  </div>
+</div>
