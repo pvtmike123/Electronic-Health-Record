@@ -28,16 +28,19 @@
     <!-- /.row -->
 
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-3">
         <a href="#" class="list-group-item active text-center">
           Personal Information
         </a>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-3">
         <%= link_to 'Medical Records', medical_path(), class: "list-group-item text-center" %>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-3">
         <a href="#" class="list-group-item text-center">Appointment History</a>
+      </div>
+      <div class="col-lg-3">
+        <a href="#" class="list-group-item text-center">Notes</a>
       </div>
     </div>
     <!-- /.row -->
@@ -83,3 +86,11 @@
 
 </div>
 <!-- /#wrapper -->
+
+<script type="text/javascript">
+$(function () {
+  $('#datetimepicker3').datetimepicker({
+    format: "DD-MM-YYYY"
+  });
+});
+</script>

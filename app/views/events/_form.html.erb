@@ -22,7 +22,7 @@
 
   <div class="field">
       <%= form.label :Patient %>
-      <%= form.collection_select :patient, Patient.all, :surname, :surname, { class: "form-dropdown" } %>
+      <%= form.collection_select :patient, Patient.all, :id, :surname, {}, {class: "form-control"} %>
     </div>
 
     <div class="field">

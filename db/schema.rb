@@ -15,14 +15,6 @@ ActiveRecord::Schema.define(version: 20180319180034) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "appointments", force: :cascade do |t|
-    t.string "name"
-    t.string "phone_number"
-    t.datetime "time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -87,6 +79,15 @@ ActiveRecord::Schema.define(version: 20180319180034) do
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
   end
 
+  create_table "medical_informations", force: :cascade do |t|
+    t.string "smoker"
+    t.text "allergies"
+    t.bigint "patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_medical_informations_on_patient_id"
+  end
+
   create_table "medicals", force: :cascade do |t|
     t.string "allergies"
     t.string "smoker"
@@ -100,14 +101,6 @@ ActiveRecord::Schema.define(version: 20180319180034) do
     t.string "asthma"
     t.string "sti"
     t.string "Hayfever"
-  end
-
-  create_table "meetings", force: :cascade do |t|
-    t.string "name"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "patients", force: :cascade do |t|
@@ -163,4 +156,5 @@ ActiveRecord::Schema.define(version: 20180319180034) do
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
+  add_foreign_key "medical_informations", "patients"
 end
