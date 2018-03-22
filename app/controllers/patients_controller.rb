@@ -15,8 +15,6 @@ class PatientsController < ApplicationController
   # GET /patients/new
   def new
     @patient = Patient.new
-    @medical = Medical.create(params[:medical])
-    @note = Note.create(params[:notes])
   end
 
   # GET /patients/1/edit
@@ -27,7 +25,8 @@ class PatientsController < ApplicationController
   # POST /patients.json
   def create
     @patient = Patient.new(patient_params)
-    @note = @patient.notes.build(params[:patient_id])
+    @note = @patient.notes.build(params[:patient_id]) # .build used for has many (more than one record)
+    @history = @patient.create_history(params[:patient_id]) # .create used for has one relationship
     @medical = @patient.create_medical(params[:patient_id])
     @patient.user_id = current_user.id
 
