@@ -11,7 +11,6 @@ class HistoriesController < ApplicationController
   # GET /histories/1
   # GET /histories/1.json
   def show
-    @events = Event.find(params[:id])
     @history_events = History.find(params[:id])
     @events =  Event.where(:patient => @history_events).order('created_at DESC')
     @patients = Patient.all
