@@ -51,8 +51,8 @@
       <% @events.order('created_at DESC').limit(9).each do |event| %>
         <div class="list-group">
           <a href="/events/<%= event.id %>" class="list-group-item">
-            <h4 class="list-group-item-heading"><%= event.title %></h4>
-            <p class="list-group-item-text"><%= event.description %></p>
+            <h4 class="list-group-item-heading"><%= event.id %>. <%= event.title %></h4>
+            <p class="list-group-item-text"><%= event.description.truncate(150) %></p>
             <p class="list-group-item-text"><%= event.end_time.to_date %></p>
           </a>
         </div>

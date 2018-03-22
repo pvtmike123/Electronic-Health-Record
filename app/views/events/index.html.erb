@@ -143,8 +143,8 @@
                 <tbody>
                   <% @events.order('created_at DESC').limit(9).each do |event| %>
                     <tr>
-                      <td><%= event.title %></td>
-                      <td><%= event.description %></td>
+                      <td><%= event.title.truncate(15) %></td>
+                      <td><%= event.description.truncate(95) %></td>
                       <td><%= event.start_time.to_date %></td>
                       <td><%= event.end_time.to_date %></td>
                       <td><%= link_to 'View', event, class: "btn btn-default" %></td>
