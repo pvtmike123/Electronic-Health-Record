@@ -46,6 +46,16 @@
 
   <br/>
 
+  <% if@events.empty? %>
+
+    <div class="alert alert-info alert-dismissible">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Warning!</strong>
+      No previous appointments found in records.
+    </div>
+
+  <% else %>
+
   <div class="row">
     <div class="col-lg-12">
       <% @events.order('created_at DESC').limit(9).each do |event| %>
@@ -56,6 +66,7 @@
             <p class="list-group-item-text"><%= event.end_time.to_date %></p>
           </a>
         </div>
+      <% end %>
       <% end %>
     </a>
   </div>

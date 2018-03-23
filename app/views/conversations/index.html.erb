@@ -8,6 +8,7 @@
         <h1 class="page-header">
           Messages
           <small>Home</small>
+          <%= link_to "New Message", new_conversation_path, :class => "btn btn-success pull-right" %>
         </h1>
         <ol class="breadcrumb">
           <li>
@@ -19,12 +20,18 @@
     </div>
     <!-- /.row -->
 
-<% @conversations.each do |conversation| %>
-<div>
-  <%= link_to conversation.subject, conversation_path(conversation) %>
-</div>
-<% end %>
-
-<br>
-
-<%= link_to "New Message", new_conversation_path, :class => "btn btn-default" %>
+    <div class="row">
+      <div class="col-lg-12">
+        <% @conversations.each do |conversation| %>
+          <div class="list-group">
+            <a href="/conversations/<%= conversation.id %>" class="list-group-item">
+              <h4 class="list-group-item-heading"><%= conversation.subject %></h4>
+              <p class="list-group-item-text"><%= conversation.created_at.to_date %></p>
+              <p class="list-group-item-text"></p>
+            </a>
+          </div>
+        <% end %>
+      </a>
+    </div>
+  </div>
+  <!-- /.row -->

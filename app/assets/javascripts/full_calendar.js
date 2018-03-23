@@ -17,7 +17,7 @@ initialize_calendar = function() {
       timeFormat: {
         agenda: 'H' //h:mm{ - h:mm}'
     },
-      defaultView: 'agendaWeek',
+      defaultView: 'month',
       businessHours: true,
       businessHours: {
         start: '09:00',
