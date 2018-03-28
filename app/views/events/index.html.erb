@@ -35,7 +35,7 @@
                 <i class="fa fa-user fa-5x"></i>
               </div>
               <div class="col-xs-9 text-right">
-                <div class="huge"><%= @events.count %></div>
+                <div class="huge"><%= @events.where(start_time: Date.today.beginning_of_day..Date.today.end_of_day).count %></div>
                 <div>Total Number of events</div>
               </div>
             </div>
@@ -126,7 +126,7 @@
           <div class="panel-heading">
             <h3 class="panel-title">
               <i class="fa fa-users fa-fw"></i>
-              Appiontment List</h3>
+              Todays Appiontment List</h3>
           </div>
           <div class="panel-body">
             <div id="morris-area-chart">

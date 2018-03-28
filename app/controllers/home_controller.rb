@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @patients = Patient.all.where(:user_id => current_user.id)
-    @events = Event.all
+    @events = Event.all.order("updated_at DESC").where(start_time: Date.today.beginning_of_day..Date.today.end_of_day)
     @medical = Medical.all
     @conversations = current_user.mailbox.conversations
   end

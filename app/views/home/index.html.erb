@@ -56,9 +56,9 @@
                 <i class="fa fa-calendar fa-4x"></i>
               </div>
               <div class="col-xs-9 text-right">
-                <div class="huge"><%= @events.count %>
+                <div class="huge"><%= @events.where(start_time: Date.today.beginning_of_day..Date.today.end_of_day).count %>
                   of 12</div>
-                <div>Appiontments remaining</div>
+                <div>Appiontments Today</div>
               </div>
             </div>
           </div>
