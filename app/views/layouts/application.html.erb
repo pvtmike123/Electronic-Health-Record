@@ -35,25 +35,6 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu message-dropdown">
-              <% @conversations.each do |conversation| %>
-              <li class="message-preview">
-                <a href="/conversations/<%= conversation.id %>">
-                  <div class="media">
-                    <span class="pull-left">
-                      <img class="media-object" src="" alt="">
-                    </span>
-                    <div class="media-body">
-                      <h5 class="media-heading">
-                        <strong><%= conversation.subject %></strong>
-                      </h5>
-                      <p class="small text-muted">
-                        <i class="fa fa-clock-o"></i>
-                        <%= conversation.created_at.to_date %></p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <% end %>
 
               <li class="message-footer">
                 <a href="/conversations">Read All New Messages</a>
@@ -78,11 +59,6 @@
                   <a href="/conversations">
                     <i class="fa fa-fw fa-envelope"></i>
                     Inbox</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="fa fa-fw fa-gear"></i>
-                    Settings</a>
                 </li>
                 <li class="divider"></li>
 
