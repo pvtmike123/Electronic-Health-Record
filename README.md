@@ -9,11 +9,7 @@ Things you may want to cover:
 
 * Ruby version
 
- - 2.4.0
-
 * Ruby version
-
- - 5.1.4
 
 * System dependencies
 
