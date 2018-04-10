@@ -155,11 +155,6 @@
           <div class="panel-body">
             <%= pie_chart Medical.group(:smoker).count %>
             <div id="morris-donut-chart"></div>
-            <div class="text-right">
-              <a href="#">View Details
-                <i class="fa fa-arrow-circle-right"></i>
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -173,12 +168,6 @@
           <div class="panel-body">
 
             <%= geo_chart Patient.group(:county).count %>
-
-            <div class="text-right">
-              <a href="#">View All Activity
-                <i class="fa fa-arrow-circle-right"></i>
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -192,11 +181,6 @@
           <div class="panel-body">
             <div class="table-responsive">
               <%= column_chart Patient.group_by_day_of_week(:created_at, format: "%a").count %>
-            </div>
-            <div class="text-right">
-              <a href="#">View All Transactions
-                <i class="fa fa-arrow-circle-right"></i>
-              </a>
             </div>
           </div>
         </div>

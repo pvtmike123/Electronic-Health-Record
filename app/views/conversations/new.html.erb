@@ -1,17 +1,46 @@
-<h1>New Conversation</h1>
+<div id="page-wrapper">
 
-<%= form_tag conversations_path, method: :post do %>
-<div>
-  <%= select_tag :user_id, options_from_collection_for_select(@recipients, :id, :email) %>
-</div>
+  <div class="container-fluid">
 
-<div>
-  <%= text_field_tag :subject, nil, placeholder: "Subject" %>
-</div>
+    <!-- Page Heading -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">
+          New
+          <small>Conversation</small>
+          <%= link_to "New Message", new_conversation_path, :class => "btn btn-success pull-right" %>
+        </h1>
+        <ol class="breadcrumb">
+          <li>
+            <a href="/">Home</a>
+          </li>
+            <li class="active">Messages</li>
+        </ol>
+      </div>
+    </div>
+    <!-- /.row -->
 
-<div>
-  <%= text_area_tag :body, nil, placeholder: "Leave a comment" %>
-</div>
+    <div class="row">
+      <div class="col-lg-4">
 
-<%= submit_tag %>
-<% end %>
+        <%= form_tag conversations_path, method: :post do %>
+        <div>
+          <label for="usr">User:</label>
+          <%= select_tag :user_id, options_from_collection_for_select(@recipients, :id, :email), :class => "form-control" %>
+        </div>
+
+        <div>
+          <label for="usr">Subject:</label>
+          <%= text_field_tag :subject, nil, placeholder: "Subject", :class => "form-control" %>
+        </div>
+
+        <div>
+          <label for="usr">Message:</label>
+          <%= text_area_tag :body, nil, placeholder: "Leave a comment", :class => "form-control", :rows => "8" %>
+        </div>
+
+        <%= submit_tag("Submit", :class => "btn btn-success" ) %>
+        <% end %>
+    </div>
+  </div>
+  <!-- /.row -->
