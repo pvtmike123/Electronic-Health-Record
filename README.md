@@ -3,9 +3,11 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-## Installation
+## Setup
 
-Things you may want to cover:
+Clone repository:
+
+    https://github.com/pvtmike123/Electronic-Health-Record.git
 
 * Ruby version
 
