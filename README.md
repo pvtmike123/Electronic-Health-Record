@@ -12,20 +12,16 @@ Clone repository:
 
     https://github.com/pvtmike123/Electronic-Health-Record.git
 
-DB creation:
+## Database creation
+
+Create:
 
     rake db:create
 
-DB migration:
+Migrate:
 
     rake db:migrate
 
-DB seed:
+Seed:
 
     rake db:seed
-
-## Running
-
-Run locally:
-
-    rails s
