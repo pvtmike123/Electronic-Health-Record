@@ -1,7 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## System dependencies
+
+- PostgreSQL
+- Ruby version 2.4.0
+- Rails version 5.1.4
 
 ## Setup
 
@@ -9,22 +12,22 @@ Clone repository:
 
     https://github.com/pvtmike123/Electronic-Health-Record.git
 
-* Ruby version
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
 * Database creation
 
-* Database initialization
+DB creation:
 
-* How to run the test suite
+    rake db:create
 
-* Services (job queues, cache servers, search engines, etc.)
+DB migration:
 
-* Deployment instructions
+    rake db:migrate
 
-* ...
+DB seed:
+
+    rake db:seed
+
+## Running
+
+Run locally:
+
+    rails s
