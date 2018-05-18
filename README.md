@@ -12,6 +12,10 @@ Clone repository:
 
     https://github.com/pvtmike123/Electronic-Health-Record.git
 
+Then:
+
+    `bundle install`
+
 ## Database creation
 
 Create:
@@ -25,3 +29,7 @@ Migrate:
 Seed:
 
     rake db:seed
+
+## Run
+
+    rails s
