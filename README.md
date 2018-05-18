@@ -12,8 +12,6 @@ Clone repository:
 
     https://github.com/pvtmike123/Electronic-Health-Record.git
 
-* Database creation
-
 DB creation:
 
     rake db:create
