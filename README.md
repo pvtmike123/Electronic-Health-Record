@@ -24,32 +24,8 @@ Use the following command to start Postgres as a background service:
 
 ## Connect Postgres to Application
 
-Now, change config/database.yml file to point to your Postgres database:
+Now, change config/database.yml file to point to your Postgres database. Ensure Usernames and passwords match that of postgres on your local machine
 
-   default: &default
-      adapter: postgresql
-      encoding: unicode
-
-   development:
-      adapter: postgresql
-      encoding: unicode
-      database: ehr_development
-      username: your_postgres_username
-      password:
-
-   test:
-      adapter: postgresql
-      encoding: unicode
-      database: ehr_test
-      username: your_postgres_username
-      password:
-
-   production:
-      adapter: postgresql
-      encoding: unicode
-      database: ehr_production
-      username:
-      password:
 
 ## Ensure Postgres is installed and run
 
@@ -74,3 +50,5 @@ Seed:
 ## Run
 
     rails s
+
+App will be running on localhost:3000
