@@ -24,12 +24,12 @@ Use the following command to start Postgres as a background service:
 
 ## Connect Postgres to Application
 
-Now, change config/database.yml file to point to your Postgres database. Ensure Usernames and passwords match that of postgres on your local machine
+Now, change config/database.yml file to point to your Postgres database. Ensure Usernames and passwords match that of postgres on your local machine.
 
 
 ## Ensure Postgres is installed and run
 
-Bundle:
+Install Gems:
 
     bundle install
 

@@ -167,7 +167,7 @@
           </div>
           <div class="panel-body">
 
-            <%= geo_chart Patient.group(:county).count %>
+            <%= geo_chart Patient.group(:county).where(:user_id => current_user.id).count %>
           </div>
         </div>
       </div>
@@ -180,7 +180,7 @@
           </div>
           <div class="panel-body">
             <div class="table-responsive">
-              <%= column_chart Patient.group_by_day_of_week(:created_at, format: "%a").count %>
+              <%= column_chart Patient.group_by_day_of_week(:created_at, format: "%a").where(:user_id => current_user.id).count %>
             </div>
           </div>
         </div>
