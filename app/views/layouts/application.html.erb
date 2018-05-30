@@ -29,17 +29,20 @@
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
+          <% if user_signed_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-comment"></i>
               <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu message-dropdown">
 
+            <ul class="dropdown-menu message-dropdown">
               <li class="message-footer">
                 <a href="/conversations">Read All New Messages</a>
               </li>
             </ul>
+              <%else %>
+              <% end %>
           </li>
           <li class="dropdown">
             <% if user_signed_in? %>
