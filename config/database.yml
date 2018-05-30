@@ -19,6 +19,6 @@ test:
 production:
    adapter: postgresql
    encoding: unicode
-   database: ehr_production
+   database: <%= ENV['YOUR_DATABASE_NAME'] %>
    username: <%= ENV['YOUR_DATABASE_USERNAME'] %>
    password: <%= ENV['YOUR_DATABASE_PASSWORD'] %>
